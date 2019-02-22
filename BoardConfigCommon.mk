@@ -6,6 +6,9 @@
 
 COMMON_PATH := device/xiaomi/sm8350-common
 
+# APEX image
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
 # A/B
 AB_OTA_UPDATER := true
 
