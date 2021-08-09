@@ -45,3 +45,6 @@ ril.subscription.types=NV,RUIM
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
+
+# WFD
+persist.debug.wfd.enable=1
