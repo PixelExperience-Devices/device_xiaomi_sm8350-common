@@ -3,6 +3,7 @@ type vendor_fingerprint_device, dev_type;
 type vendor_fp_prop, vendor_public_property_type, vendor_property_type, property_type;
 type vendor_fp_info_prop, vendor_public_property_type, vendor_property_type, property_type;
 type vendor_hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
+type vendor_sysfs_fod, sysfs_type, fs_type;
 
 # Binder
 allow hal_fingerprint_default vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager find;
@@ -28,3 +29,8 @@ allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 # Data
 allow hal_fingerprint_default vendor_fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
+
+allow hal_fingerprint_default vendor_sysfs_fod:file rw_file_perms;
+
+allow hal_fingerprint_default vendor_sysfs_graphics:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_graphics:file r_file_perms;
