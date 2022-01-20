@@ -1,3 +1,7 @@
+# Bluetooth
+# Hearing Aid Audio Support Using Bluetooth LE
+bluetooth.profile.asha.central=true
+
 # DPM
 persist.vendor.dpm.feature=11
 
