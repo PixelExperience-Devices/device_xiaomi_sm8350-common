@@ -5,6 +5,10 @@ persist.vendor.dpm.feature=11
 vendor.media.target_variant=_lahaina
 vendor.mm.enable.qcom_parser=16777215
 
+# Telephony
+ro.telephony.sim_slots.count=2
+telephony.active_modems.max_count=2
+
 # WFD
 persist.debug.wfd.enable=1
 vendor.wfdservice64=enable
