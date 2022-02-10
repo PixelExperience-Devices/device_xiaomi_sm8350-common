@@ -1,6 +1,6 @@
 # Bluetooth
 # Hearing Aid Audio Support Using Bluetooth LE
-bluetooth.profile.asha.central=true
+bluetooth.profile.asha.central.enabled=false
 
 # DPM
 persist.vendor.dpm.feature=11
