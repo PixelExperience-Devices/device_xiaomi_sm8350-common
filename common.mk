@@ -380,10 +380,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
 PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    CarrierConfigResCommon \
+    FrameworksResCommon \
+    SettingsResCommon \
+    SystemUIResCommon \
+    TelephonyResCommon \
+    WifiResCommon
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
