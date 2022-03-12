@@ -73,6 +73,9 @@ function blob_fixup() {
         vendor/lib64/android.hardware.secure_element@1.0-impl.so)
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
+        vendor/etc/camera/star_motiontuning.xml|vendor/etc/camera/mars_motiontuning.xml)
+            sed -i 's/xml=version/xml\ version/g' "${2}"
+	    ;;
     esac
 }
 
