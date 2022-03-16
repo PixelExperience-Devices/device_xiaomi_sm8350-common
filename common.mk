@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
     audioadsprpcd \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    libtinycompress
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl:32 \
