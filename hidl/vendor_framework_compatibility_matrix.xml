@@ -442,8 +442,24 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>android.hardware.wifi</name>
+        <version>1.3-5</version>
+        <interface>
+            <name>IWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.wifi.hostapd</name>
+        <version>1.0-3</version>
+        <interface>
+            <name>IHostapd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>android.hardware.wifi.supplicant</name>
-        <version>1.0-2</version>
+        <version>1.0-4</version>
         <interface>
             <name>ISupplicant</name>
             <instance>default</instance>
@@ -709,6 +725,18 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.drm</name>
+        <version>1.3-4</version>
+        <interface>
+            <name>ICryptoFactory</name>
+            <regex-instance>.*</regex-instance>
+        </interface>
+        <interface>
+            <name>IDrmFactory</name>
+            <regex-instance>.*</regex-instance>
+        </interface>
+    </hal>
     <!-- WifiStats HAL service-->
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.wifi.wifilearner</name>
@@ -784,6 +812,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <!-- Camera PostProcessing service -->
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.cameraperf</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMiCameraPerfService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.camera.postproc</name>
         <transport>hwbinder</transport>
