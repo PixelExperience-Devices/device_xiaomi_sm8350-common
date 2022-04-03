@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from odin V12.5.12.0.RKMCNXM
+# All unpinned blobs below are extracted from star V13.0.9.0.SKACNXM
 
 # ADSP
 vendor/bin/adsprpcd
@@ -410,7 +410,7 @@ vendor/lib/c2.dolby.hevc.dec.so
 vendor/lib/c2.dolby.hevc.sec.dec.so
 vendor/lib/c2.dolby.store.so
 vendor/lib/libcodec2_soft_common.so
-vendor/lib/libdolbyottcontrol.so
+vendor/lib/libdolbyottcameracontrol.so
 vendor/lib/libdovi.so
 vendor/lib/libsfplugin_ccodec_utils.so
 
