@@ -470,13 +470,12 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /* sensorId */) {
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y */,
                                                 float /* minor */, float /* major */) {
-    set(FOD_STATUS_PATH, FOD_STATUS_ON);
+    set(FOD_HBM_PATH, FOD_HBM_ON);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
     set(FOD_HBM_PATH, FOD_HBM_OFF);
-    set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     return Void();
 }
 
