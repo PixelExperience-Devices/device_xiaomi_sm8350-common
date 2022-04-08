@@ -16,3 +16,6 @@ com.fingerprints.extension::IFingerprintOptical                                 
 
 # Mlipay
 vendor.xiaomi.hardware.mlipay::IMlipayService                                 u:object_r:hal_mlipay_hwservice:s0
+
+# Radio
+vendor.qti.hardware.radio.ims::IImsRadio                                      u:object_r:hal_telephony_hwservice:s0
