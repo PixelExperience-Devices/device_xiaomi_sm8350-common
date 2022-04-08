@@ -1,3 +1,6 @@
+# Camera
+vendor.xiaomi.hardware.cameraperf::IMiCameraPerfService                              u:object_r:vendor_hal_cameraperf_hwservice:s0
+
 # Dtool
 vendor.xiaomi.hardware.dtool::IDtool                                                 u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 
