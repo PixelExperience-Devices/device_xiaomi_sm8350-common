@@ -26,10 +26,6 @@ $(call inherit-product, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# AID/fs configs
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
