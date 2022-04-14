@@ -78,7 +78,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 
 DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/hidl/manifest_lahaina.xml \
-    $(COMMON_PATH)/hidl/manifest_lineage.xml \
     $(COMMON_PATH)/hidl/manifest_xiaomi.xml
 
 # Kernel
@@ -109,6 +108,15 @@ BOARD_KERNEL_CMDLINE += pcie_ports=compat
 BOARD_KERNEL_CMDLINE += iptable_raw.raw_before_defrag=1
 BOARD_KERNEL_CMDLINE += ip6table_raw.raw_before_defrag=1
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
+
+# LiveDisplay
+ifneq ("$(wildcard hardware/lineage/livedisplay)", "")
+SOONG_CONFIG_NAMESPACES += livedisplay
+SOONG_CONFIG_livedisplay += enabled
+SOONG_CONFIG_livedisplay_enabled := true
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/hidl/manifest_lineage.xml
+endif
 
 # NFC
 TARGET_USES_NQ_NFC := true

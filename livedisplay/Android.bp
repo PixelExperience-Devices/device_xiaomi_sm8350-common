@@ -13,14 +13,39 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+soong_config_module_type {
+    name: "livedisplay_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "livedisplay",
+    bool_variables: ["enabled"],
+    properties: ["srcs", "shared_libs", "header_libs"],
+}
+
+livedisplay_cc_defaults {
+    name: "livedisplay_defaults",
+    soong_config_variables: {
+        enabled: {
+            srcs: [
+                ":vendor.lineage.livedisplay@2.0-sdm-utils",
+            ],
+            shared_libs: [
+                "vendor.lineage.livedisplay@2.0",
+                "vendor.lineage.livedisplay@2.1",
+            ],
+            header_libs: [
+                "vendor.lineage.livedisplay@2.0-sdm-headers",
+            ],
+        },
+    },
+}
+
 cc_binary {
     name: "vendor.lineage.livedisplay@2.1-service.xiaomi_sm8350",
     vintf_fragments: ["vendor.lineage.livedisplay@2.1-service.xiaomi_sm8350.xml"],
     init_rc: ["vendor.lineage.livedisplay@2.1-service.xiaomi_sm8350.rc"],
-    defaults: ["hidl_defaults"],
+    defaults: ["hidl_defaults", "livedisplay_defaults"],
     relative_install_path: "hw",
     srcs: [
-        ":vendor.lineage.livedisplay@2.0-sdm-utils",
         "AntiFlicker.cpp",
         "SunlightEnhancement.cpp",
         "service.cpp",
@@ -31,10 +56,5 @@ cc_binary {
         "libbinder",
         "libhidlbase",
         "libutils",
-        "vendor.lineage.livedisplay@2.0",
-        "vendor.lineage.livedisplay@2.1",
-    ],
-    header_libs: [
-        "vendor.lineage.livedisplay@2.0-sdm-headers",
     ],
 }
