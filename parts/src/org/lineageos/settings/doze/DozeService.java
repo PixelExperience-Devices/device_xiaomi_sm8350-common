@@ -30,14 +30,12 @@ public class DozeService extends Service {
     private static final boolean DEBUG = false;
 
     private AodSensor mAodSensor;
-    private PickupSensor mPickupSensor;
 
     @Override
     public void onCreate() {
         if (DEBUG)
             Log.d(TAG, "Creating service");
         mAodSensor = new AodSensor(this);
-        mPickupSensor = new PickupSensor(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -58,7 +56,6 @@ public class DozeService extends Service {
             Log.d(TAG, "Destroying service");
         super.onDestroy();
         this.unregisterReceiver(mScreenStateReceiver);
-        mPickupSensor.disable();
     }
 
     @Override
@@ -69,9 +66,6 @@ public class DozeService extends Service {
     private void onDisplayOn() {
         if (DEBUG)
             Log.d(TAG, "Display on");
-        if (DozeUtils.isPickUpEnabled(this)) {
-            mPickupSensor.disable();
-        }
         if (DozeUtils.isDozeAutoBrightnessEnabled(this)) {
             mAodSensor.disable();
         }
@@ -80,9 +74,6 @@ public class DozeService extends Service {
     private void onDisplayOff() {
         if (DEBUG)
             Log.d(TAG, "Display off");
-        if (DozeUtils.isPickUpEnabled(this)) {
-            mPickupSensor.enable();
-        }
         if (DozeUtils.isDozeAutoBrightnessEnabled(this)) {
             mAodSensor.enable();
         }

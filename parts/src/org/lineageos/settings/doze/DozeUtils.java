@@ -46,10 +46,6 @@ public final class DozeUtils {
     protected static final String DOZE_ENABLE = "doze_enable";
     protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
     protected static final String DOZE_BRIGHTNESS_KEY = "doze_brightness";
-    protected static final String WAKE_ON_GESTURE_KEY = "wake_on_gesture";
-    protected static final String CATEG_PICKUP_SENSOR = "pickup_sensor";
-
-    protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
 
     protected static final String DOZE_MODE_PATH =
             "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode";
@@ -100,22 +96,6 @@ public final class DozeUtils {
         return Settings.Secure.getInt(context.getContentResolver(), DOZE_ENABLED, 1) != 0;
     }
 
-    protected static void wakeOrLaunchDozePulse(Context context) {
-        if (isWakeOnGestureEnabled(context)) {
-            if (DEBUG) {
-                Log.d(TAG, "Wake up display");
-            }
-            PowerManager powerManager = context.getSystemService(PowerManager.class);
-            powerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_GESTURE, TAG);
-        } else {
-            if (DEBUG) {
-                Log.d(TAG, "Launch doze pulse");
-            }
-            context.sendBroadcastAsUser(
-                    new Intent(DOZE_INTENT), new UserHandle(UserHandle.USER_CURRENT));
-        }
-    }
-
     protected static boolean enableAlwaysOn(Context context, boolean enable) {
         return Settings.Secure.putIntForUser(context.getContentResolver(), DOZE_ALWAYS_ON,
                 enable ? 1 : 0, UserHandle.USER_CURRENT);
@@ -145,20 +125,8 @@ public final class DozeUtils {
                 .equals(DOZE_BRIGHTNESS_AUTO);
     }
 
-    protected static boolean isGestureEnabled(Context context, String gesture) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(gesture, false);
-    }
-
-    protected static boolean isWakeOnGestureEnabled(Context context) {
-        return isGestureEnabled(context, WAKE_ON_GESTURE_KEY);
-    }
-
-    protected static boolean isPickUpEnabled(Context context) {
-        return isGestureEnabled(context, GESTURE_PICK_UP_KEY);
-    }
-
     public static boolean sensorsEnabled(Context context) {
-        return isDozeAutoBrightnessEnabled(context) || isPickUpEnabled(context);
+        return isDozeAutoBrightnessEnabled(context);
     }
 
     protected static Sensor getSensor(SensorManager sm, String type) {

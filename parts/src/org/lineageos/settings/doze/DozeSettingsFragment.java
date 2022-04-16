@@ -46,8 +46,6 @@ public class DozeSettingsFragment extends PreferenceFragment
 
     private SwitchPreference mAlwaysOnDisplayPreference;
     private ListPreference mDozeBrightnessPreference;
-    private SwitchPreference mWakeOnGesturePreference;
-    private SwitchPreference mPickUpPreference;
 
     private Handler mHandler = new Handler();
 
@@ -76,18 +74,6 @@ public class DozeSettingsFragment extends PreferenceFragment
         mDozeBrightnessPreference.setEnabled(
                 dozeEnabled && DozeUtils.isAlwaysOnEnabled(getActivity()));
         mDozeBrightnessPreference.setOnPreferenceChangeListener(this);
-
-        mWakeOnGesturePreference = (SwitchPreference) findPreference(DozeUtils.WAKE_ON_GESTURE_KEY);
-        mWakeOnGesturePreference.setEnabled(dozeEnabled);
-        mWakeOnGesturePreference.setOnPreferenceChangeListener(this);
-
-        PreferenceCategory pickupSensorCategory =
-                (PreferenceCategory) getPreferenceScreen().findPreference(
-                        DozeUtils.CATEG_PICKUP_SENSOR);
-
-        mPickUpPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_PICK_UP_KEY);
-        mPickUpPreference.setEnabled(dozeEnabled);
-        mPickUpPreference.setOnPreferenceChangeListener(this);
 
         // Hide AOD and doze brightness if not supported and set all its dependents otherwise
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
@@ -141,8 +127,6 @@ public class DozeSettingsFragment extends PreferenceFragment
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
         mDozeBrightnessPreference.setEnabled(
                 isChecked && DozeUtils.isAlwaysOnEnabled(getActivity()));
-        mWakeOnGesturePreference.setEnabled(isChecked);
-        mPickUpPreference.setEnabled(isChecked);
     }
 
     private static class HelpDialogFragment extends DialogFragment {
