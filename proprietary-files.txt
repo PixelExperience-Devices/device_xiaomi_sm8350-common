@@ -12,6 +12,27 @@ system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
 
+# Audio HAL
+vendor/lib/hw/audio.primary.lahaina.so
+vendor/lib/liba2dpoffload.so
+vendor/lib/libadm.so
+vendor/lib/libaudioconfigstore.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudioparsers.so
+vendor/lib/libaudioroute_ext.so
+vendor/lib/libbatterylistener.so
+vendor/lib/libcomprcapture.so
+vendor/lib/libexthwplugin.so
+vendor/lib/libhdmiedid.so
+vendor/lib/libhdmipassthru.so
+vendor/lib/libhfp.so
+vendor/lib/libqtigef.so
+vendor/lib/libresampler.so
+vendor/lib/libsndmonitor.so
+vendor/lib/libspkrprot.so
+vendor/lib/libssrec.so
+vendor/lib/libvideoNS.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
@@ -37,6 +58,52 @@ vendor/lib/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+
+# Computer Vision firmware
+vendor/firmware/evass.b00
+vendor/firmware/evass.b01
+vendor/firmware/evass.b02
+vendor/firmware/evass.b03
+vendor/firmware/evass.b04
+vendor/firmware/evass.b05
+vendor/firmware/evass.b06
+vendor/firmware/evass.b07
+vendor/firmware/evass.b08
+vendor/firmware/evass.b09
+vendor/firmware/evass.b10
+vendor/firmware/evass.b11
+vendor/firmware/evass.b12
+vendor/firmware/evass.b13
+vendor/firmware/evass.b14
+vendor/firmware/evass.b15
+vendor/firmware/evass.b16
+vendor/firmware/evass.b17
+vendor/firmware/evass.b18
+vendor/firmware/evass.b19
+vendor/firmware/evass-lt.b00
+vendor/firmware/evass-lt.b01
+vendor/firmware/evass-lt.b02
+vendor/firmware/evass-lt.b03
+vendor/firmware/evass-lt.b04
+vendor/firmware/evass-lt.b05
+vendor/firmware/evass-lt.b06
+vendor/firmware/evass-lt.b07
+vendor/firmware/evass-lt.b08
+vendor/firmware/evass-lt.b09
+vendor/firmware/evass-lt.b10
+vendor/firmware/evass-lt.b11
+vendor/firmware/evass-lt.b12
+vendor/firmware/evass-lt.b13
+vendor/firmware/evass-lt.b14
+vendor/firmware/evass-lt.b15
+vendor/firmware/evass-lt.b16
+vendor/firmware/evass-lt.b17
+vendor/firmware/evass-lt.b18
+vendor/firmware/evass-lt.b19
+vendor/firmware/evass-lt.mbn
+vendor/firmware/evass-lt.mdt
+vendor/firmware/evass.mbn
+vendor/firmware/evass.mdt
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -290,6 +357,15 @@ vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 
+# Graphics firmware
+vendor/firmware/a660_gmu.bin
+vendor/firmware/a660_sqe.fw
+vendor/firmware/a660_zap.b00
+vendor/firmware/a660_zap.b01
+vendor/firmware/a660_zap.b02
+vendor/firmware/a660_zap.elf
+vendor/firmware/a660_zap.mdt
+
 # IFAA Service
 -vendor/app/IFAAService/IFAAService.apk
 
@@ -350,6 +426,16 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+
+# IPA firmware
+vendor/etc/init/ipa_fws.rc
+vendor/firmware/ipa_fws.b00
+vendor/firmware/ipa_fws.b01
+vendor/firmware/ipa_fws.b02
+vendor/firmware/ipa_fws.b03
+vendor/firmware/ipa_fws.b04
+vendor/firmware/ipa_fws.elf
+vendor/firmware/ipa_fws.mdt
 
 # IRQ balance
 vendor/bin/msm_irqbalance
@@ -416,6 +502,54 @@ vendor/lib/libcodec2_soft_common.so
 vendor/lib/libdolbyottcameracontrol.so
 vendor/lib/libdovi.so
 vendor/lib/libsfplugin_ccodec_utils.so
+
+# Media (VPU firmware)
+vendor/firmware/vpu20_2v.b00
+vendor/firmware/vpu20_2v.b01
+vendor/firmware/vpu20_2v.b02
+vendor/firmware/vpu20_2v.b03
+vendor/firmware/vpu20_2v.b04
+vendor/firmware/vpu20_2v.b05
+vendor/firmware/vpu20_2v.b06
+vendor/firmware/vpu20_2v.b07
+vendor/firmware/vpu20_2v.b08
+vendor/firmware/vpu20_2v.b09
+vendor/firmware/vpu20_2v.b10
+vendor/firmware/vpu20_2v.b11
+vendor/firmware/vpu20_2v.b12
+vendor/firmware/vpu20_2v.b13
+vendor/firmware/vpu20_2v.b14
+vendor/firmware/vpu20_2v.b15
+vendor/firmware/vpu20_2v.b16
+vendor/firmware/vpu20_2v.b17
+vendor/firmware/vpu20_2v.b18
+vendor/firmware/vpu20_2v.b19
+vendor/firmware/vpu20_2v.mbn
+vendor/firmware/vpu20_2v.mdt
+vendor/firmware/vpu20_2v_unsigned.mbn
+vendor/firmware/vpu20_4v.b00
+vendor/firmware/vpu20_4v.b01
+vendor/firmware/vpu20_4v.b02
+vendor/firmware/vpu20_4v.b03
+vendor/firmware/vpu20_4v.b04
+vendor/firmware/vpu20_4v.b05
+vendor/firmware/vpu20_4v.b06
+vendor/firmware/vpu20_4v.b07
+vendor/firmware/vpu20_4v.b08
+vendor/firmware/vpu20_4v.b09
+vendor/firmware/vpu20_4v.b10
+vendor/firmware/vpu20_4v.b11
+vendor/firmware/vpu20_4v.b12
+vendor/firmware/vpu20_4v.b13
+vendor/firmware/vpu20_4v.b14
+vendor/firmware/vpu20_4v.b15
+vendor/firmware/vpu20_4v.b16
+vendor/firmware/vpu20_4v.b17
+vendor/firmware/vpu20_4v.b18
+vendor/firmware/vpu20_4v.b19
+vendor/firmware/vpu20_4v.mbn
+vendor/firmware/vpu20_4v.mdt
+vendor/firmware/vpu20_4v_unsigned.mbn
 
 # Mlipay
 -vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
