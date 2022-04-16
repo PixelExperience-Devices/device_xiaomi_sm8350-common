@@ -189,11 +189,11 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.lahaina.so
 
-# Display - from LA.UM.9.14.r1-18300.05-LAHAINA.QSSI12.0
+# Display - from LA.UM.9.14.r1-18400.02-LAHAINA.QSSI12.0
 vendor/lib64/libdisplayqos.so|aa222f4c1a2d2fb60944c44f8a82621d6bc75184
 vendor/lib64/libdisplayskuutils.so|5afcd261783ca109c9d63e8d08c879b76fb4efd6
 vendor/lib64/libdpps.so|9172a125e1fbfcf21c074641f174c2fd0dd2fd39
-vendor/lib64/libhdr_tm.so|12b190b34cc98d077c4504e93243c19d9199b0f2
+vendor/lib64/libhdr_tm.so|d8dbc68fd52ec4e55389c8a458915018cc4c7678
 vendor/lib64/libqdcm-mode-parser.so|207143ab4dda0886bde2a0333d7a1bcd7af6f8e1
 vendor/lib64/libqrtrclient.so|51c55fea28fa475ae9b2c64592f32802e6ba6c25
 vendor/lib64/libqseed3.so|d62c37baf259250cadfcff8734e82054ed87bb96
@@ -202,7 +202,7 @@ vendor/lib64/libsdm-colormgr-algo.so|5416a3b9b0735099c9b86f451f41386711787ea4
 vendor/lib64/libsdm-color.so|aeb07689c1bfc885ef9c846c0148e6f1e3f7f0ac
 vendor/lib64/libsdm-diag.so|c539c4e4b435296611eb56df182dfcc44937c5df
 vendor/lib64/libsdm-disp-vndapis.so|dc3ff8c971bbcb0d1b9e5079324d1d1d05a1fd39
-vendor/lib64/libsdmextension.so|bca4067c7cd7b184279ed5fef9cc6b20b857440c
+vendor/lib64/libsdmextension.so|b08952ad00745e3a5529a9632b6fc0b154865d5a
 vendor/lib64/libsnapdragoncolor-manager.so|e7f55a1ba843bb570afa6bbf16bb61dc01ec74ea
 vendor/lib64/libsnapdragoncolor-qdcm.so|673c41753603bacb197674df567723dfd928384e
 vendor/lib64/libtinyxml2_1.so|11ceb3f1e7650c41621d47e5ec5567c8f466086e
