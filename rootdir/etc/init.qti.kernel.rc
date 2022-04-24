@@ -1,5 +1,5 @@
 #=============================================================================
-# Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+# Copyright (c) 2019-2021 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 #
@@ -29,6 +29,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
+
+on early-init
+    write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
 on init
     # Update scheduler tunables
@@ -70,6 +73,8 @@ service kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot.sh
     oneshot
 
 on property:sys.boot_completed=1
+    write /proc/sys/vm/page-cluster 0
+
     start kernel-post-boot
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
