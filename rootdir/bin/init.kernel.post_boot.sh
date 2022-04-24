@@ -1,5 +1,5 @@
 #=============================================================================
-# Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+# Copyright (c) 2019-2021 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 #
@@ -30,49 +30,23 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
 
-on init
-    # Update scheduler tunables
-    write /dev/cpuctl/foreground/cpu.uclamp.sched_boost_no_override 1
-    write /dev/cpuctl/top-app/cpu.uclamp.sched_boost_no_override 1
-    write /dev/cpuctl/background/cpu.uclamp.colocate 0
-    write /dev/cpuctl/foreground/cpu.uclamp.colocate 0
-    write /dev/cpuctl/top-app/cpu.uclamp.colocate 1
+if [ -f /sys/devices/soc0/soc_id ]; then
+	platformid=`cat /sys/devices/soc0/soc_id`
+fi
 
-on early-boot
-    # Allow subsystem (modem etc) debugging
-    write /sys/kernel/boot_adsp/boot 1
-    write /sys/kernel/boot_cdsp/boot 1
-    write /sys/kernel/boot_slpi/boot 1
-    write /sys/devices/virtual/cvp/cvp/boot 1
+case "$platformid" in
+    "415"|"439"|"456"|"501"|"502")
+	/vendor/bin/sh /vendor/bin/init.kernel.post_boot-lahaina.sh
+	;;
 
-on boot
-    # Set the io-scheduler to bfq on all mq support devices
-    write /sys/block/sda/queue/scheduler bfq
-    write /sys/block/sdb/queue/scheduler bfq
-    write /sys/block/sdc/queue/scheduler bfq
-    write /sys/block/sdd/queue/scheduler bfq
-    write /sys/block/sde/queue/scheduler bfq
-    write /sys/block/sdf/queue/scheduler bfq
+    "450")
+	/vendor/bin/sh /vendor/bin/init.kernel.post_boot-shima.sh
+	;;
+    "475"|"499"|"487"|"488"|"498"|"497"|"515")
+	/vendor/bin/sh /vendor/bin/init.kernel.post_boot-yupik.sh
+	;;
+     *)
+	echo "***WARNING***: Invalid SoC ID\n\t No postboot settings applied!!\n"
+	;;
+esac
 
-    # Update io-scheduler tunables
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sdb/queue/iosched/slice_idle 0
-    write /sys/block/sdc/queue/iosched/slice_idle 0
-    write /sys/block/sdd/queue/iosched/slice_idle 0
-    write /sys/block/sde/queue/iosched/slice_idle 0
-    write /sys/block/sdf/queue/iosched/slice_idle 0
-
-service kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot.sh
-    class core
-    user root
-    group root system wakelock graphics
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start kernel-post-boot
-
-service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class core
-    user root
-    group root
