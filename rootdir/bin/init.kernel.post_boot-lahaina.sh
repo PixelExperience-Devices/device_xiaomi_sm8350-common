@@ -336,7 +336,7 @@ do
 	    echo 50 > $qoslat/mem_latency/ratio_ceil
 	done
 done
-echo deep > /sys/power/mem_sleep
+echo s2idle > /sys/power/mem_sleep
 configure_memory_parameters
 
 # Let kernel know our image version/variant/crm_version
