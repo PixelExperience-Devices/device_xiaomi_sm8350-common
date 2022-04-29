@@ -246,6 +246,7 @@ Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
+    set(FOD_HBM_PATH, FOD_HBM_OFF);
     onFingerUp();
     return ErrorFilter(mDevice->post_enroll(mDevice));
 }
@@ -435,6 +436,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
                          .isOk()) {
                     ALOGE("failed to invoke fingerprint onAuthenticated callback");
                 }
+                set(FOD_HBM_PATH, FOD_HBM_OFF);
                 getInstance()->onFingerUp();
             } else {
                 // Not a recognized fingerprint
@@ -475,7 +477,6 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
-    set(FOD_HBM_PATH, FOD_HBM_OFF);
     set(FOD_STATUS_PATH, FOD_STATUS_OFF);
     return Void();
 }
