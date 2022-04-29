@@ -14,8 +14,6 @@ on boot
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
     chown system system /sys/devices/virtual/touch/tp_dev/fod_status
 
-    write /sys/devices/virtual/touch/tp_dev/fod_status 1
-
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
     chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
