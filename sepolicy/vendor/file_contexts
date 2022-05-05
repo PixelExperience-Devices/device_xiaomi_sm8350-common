@@ -42,6 +42,9 @@
 /data/vendor/fpdump(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?                                           u:object_r:vendor_fingerprint_data_file:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_hbm      u:object_r:vendor_sysfs_udfps:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui       u:object_r:vendor_sysfs_udfps:s0
+/sys/devices/virtual/touch/tp_dev/fod_status                        u:object_r:vendor_sysfs_udfps:s0
 
 # Thermal
 /data/vendor/thermal(/.*)?                           u:object_r:thermal_data_file:s0
