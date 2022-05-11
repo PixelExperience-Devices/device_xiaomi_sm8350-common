@@ -12,6 +12,9 @@ ro.charger.enable_suspend=true
 # CNE
 persist.vendor.cne.feature=1
 
+# Dex2oat
+dalvik.vm.systemuicompilerfilter=speed
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
