@@ -367,7 +367,7 @@ vendor/firmware/a660_zap.elf
 vendor/firmware/a660_zap.mdt
 
 # IFAA Service
--vendor/app/IFAAService/IFAAService.apk
+-vendor/app/IFAAService/IFAAService.apk:vendor/app/IFAA/IFAA.apk
 
 # IMS
 -system_ext/priv-app/ims/ims.apk
