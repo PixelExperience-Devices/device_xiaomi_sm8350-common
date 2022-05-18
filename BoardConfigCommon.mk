@@ -59,9 +59,6 @@ TARGET_USE_QTI_BT_STACK := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
 # Dolby Vision
 SOONG_CONFIG_NAMESPACES += dolby_vision
 SOONG_CONFIG_dolby_vision += enabled
