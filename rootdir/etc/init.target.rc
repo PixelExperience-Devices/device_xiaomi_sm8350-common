@@ -111,6 +111,7 @@ on early-boot
     write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/fs_ready 1
 
     start vendor.sensors
+    verity_update_state
 
 on boot
     chown system system /sys/class/thermal/thermal_message/sconfig
