@@ -189,6 +189,12 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.lahaina.so
 
+# Diag HAL
+-vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
+vendor/bin/diag-router
+vendor/etc/init/vendor.qti.diag.rc
+vendor/lib64/vendor.qti.diaghal@1.0.so
+
 # Display - from LA.UM.9.14.r1-18400.02-LAHAINA.QSSI12.0
 vendor/lib64/libdisplayqos.so|aa222f4c1a2d2fb60944c44f8a82621d6bc75184
 vendor/lib64/libdisplayskuutils.so|5afcd261783ca109c9d63e8d08c879b76fb4efd6
