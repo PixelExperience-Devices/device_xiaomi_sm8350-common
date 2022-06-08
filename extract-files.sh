@@ -84,7 +84,7 @@ function blob_fixup() {
             mv "${TMPDIR}/${1##*/}" "${2}"
             ;;
         vendor/lib64/hw/camera.xiaomi.so)
-            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/5E070094881640F9/1F2003D5881640F9/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
+            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/5E070094881640F9/1F2003D5881640F9/g; s/AA060094881640F9/1F2003D5881640F9/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
             mv "${TMPDIR}/${1##*/}" "${2}"
             ;;
         system_ext/lib/libwfdnative.so | system_ext/lib64/libwfdnative.so )
