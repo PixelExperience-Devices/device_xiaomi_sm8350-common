@@ -105,13 +105,13 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 
 # Computer Vision (FastCV)
--vendor/lib64/libfastcvopt.so
 vendor/etc/cvp/v2.0/facedetection/model1.dat
 vendor/etc/cvp/v2.1/facedetection/model2.dat
 vendor/lib64/libcvp2_1.so
 vendor/lib64/libcvp_common.so
 vendor/lib64/libcvpcpuRev_skel.so
 vendor/lib64/libfastcvdsp_stub.so
+vendor/lib64/libfastcvopt.so
 vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
 # Configstore
