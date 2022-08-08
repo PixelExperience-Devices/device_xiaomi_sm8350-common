@@ -188,6 +188,7 @@ echo 325 > /proc/sys/kernel/walt_low_latency_task_threshold
 
 # cpuset parameters
 echo 0-3 > /dev/cpuset/background/cpus
+echo 0-3 > /dev/cpuset/restricted/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
 echo 0-6 > /dev/cpuset/foreground/cpus
 
