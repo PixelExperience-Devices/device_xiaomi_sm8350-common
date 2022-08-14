@@ -12,11 +12,27 @@
 -->
 <config>
     <component-override package="com.android.bluetooth" >
-        <component class=".a2dpsink.A2dpSinkService" enabled="true" />
+        <component class=".a2dp.A2dpService" enabled="true" />
+        <component class=".a2dpsink.A2dpSinkService" enabled="false" />
+        <component class=".acm.AcmService" enabled="true" />
+        <component class=".apm.StreamAudioService" enabled="false" />
+        <component class=".avrcpcontroller.BluetoothMediaBrowserService" enabled="false" />
         <component class=".avrcp.AvrcpTargetService" enabled="false" />
-        <component class=".avrcpcontroller.AvrcpControllerService" enabled="true" />
+        <component class=".avrcpcontroller.AvrcpControllerService" enabled="false" />
         <component class=".ba.BATService" enabled="true" />
+        <component class=".broadcast.BroadcastService" enabled="true" />
+        <component class=".gatt.GattService" enabled="true" />
+        <component class=".hfp.HeadsetService" enabled="true" />
         <component class=".hfpclient.HeadsetClientService" enabled="false" />
-        <component class=".hid.HidDeviceService" enabled="false" />
+        <component class=".hid.HidHostService" enabled="true" />
+        <component class=".hid.HidDeviceService" enabled="true" />
+        <component class=".map.BluetoothMapService" enabled="true" />
+        <component class=".mapclient.MapClientService" enabled="false" />
+        <component class=".mcp.McpService" enabled="true" />
+        <component class=".pan.PanService" enabled="true" />
+        <component class=".pbap.BluetoothPbapActivity" enabled="true" />
+        <component class=".pbapclient.PbapClientService" enabled="false" />
+        <component class=".pbapclient.AuthenticationService" enabled="false" />
+        <component class=".telephony.BluetoothInCallService" enabled="true" />
     </component-override>
 </config>
