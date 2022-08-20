@@ -20,11 +20,9 @@ import android.app.ActivityManager;
 import android.app.ActivityTaskManager;
 import android.app.TaskStackListener;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
@@ -37,14 +35,6 @@ public class ThermalService extends Service {
     private String mPreviousApp;
     private ThermalUtils mThermalUtils;
 
-    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            mPreviousApp = "";
-            mThermalUtils.setDefaultThermalProfile();
-        }
-    };
-
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
@@ -54,7 +44,6 @@ public class ThermalService extends Service {
             // Do nothing
         }
         mThermalUtils = new ThermalUtils(this);
-        registerReceiver();
         super.onCreate();
     }
 
@@ -69,13 +58,6 @@ public class ThermalService extends Service {
         return null;
     }
 
-    private void registerReceiver() {
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_SCREEN_OFF);
-        filter.addAction(Intent.ACTION_SCREEN_ON);
-        this.registerReceiver(mIntentReceiver, filter);
-    }
-
     private final TaskStackListener mTaskListener = new TaskStackListener() {
         @Override
         public void onTaskStackChanged() {
@@ -85,6 +67,7 @@ public class ThermalService extends Service {
                 if (focusedTask != null && focusedTask.topActivity != null) {
                     ComponentName taskComponentName = focusedTask.topActivity;
                     String foregroundApp = taskComponentName.getPackageName();
+                    if (DEBUG) Log.d(TAG, "onTaskStackChanged: foregroundApp=" + foregroundApp);
                     if (!foregroundApp.equals(mPreviousApp)) {
                         mThermalUtils.setThermalProfile(foregroundApp);
                         mPreviousApp = foregroundApp;
