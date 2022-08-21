@@ -92,10 +92,6 @@ public class DozeSettingsFragment extends PreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (DozeUtils.ALWAYS_ON_DISPLAY.equals(preference.getKey())) {
             DozeUtils.enableAlwaysOn(getActivity(), (Boolean) newValue);
-            if (!(Boolean) newValue) {
-                mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
-                DozeUtils.setDozeMode(DozeUtils.DOZE_BRIGHTNESS_LBM);
-            }
             mDozeBrightnessPreference.setEnabled((Boolean) newValue);
         } else if (DozeUtils.DOZE_BRIGHTNESS_KEY.equals(preference.getKey())) {
             if (!DozeUtils.DOZE_BRIGHTNESS_AUTO.equals((String) newValue)) {
@@ -121,8 +117,6 @@ public class DozeSettingsFragment extends PreferenceFragment
         if (!isChecked) {
             DozeUtils.enableAlwaysOn(getActivity(), false);
             mAlwaysOnDisplayPreference.setChecked(false);
-            mDozeBrightnessPreference.setValue(DozeUtils.DOZE_BRIGHTNESS_LBM);
-            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
         }
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
         mDozeBrightnessPreference.setEnabled(
