@@ -85,7 +85,7 @@ public final class DozeUtils {
     }
 
     private static void restoreDozeModes(Context context) {
-        if (isAlwaysOnEnabled(context) && !isDozeAutoBrightnessEnabled(context)) {
+        if (!isDozeAutoBrightnessEnabled(context)) {
             setDozeMode(PreferenceManager.getDefaultSharedPreferences(context).getString(
                     DOZE_BRIGHTNESS_KEY, String.valueOf(DOZE_BRIGHTNESS_LBM)));
         }
