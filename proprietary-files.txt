@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from star's MIUI V13.0.12.0.SKACNXM
+# All unpinned blobs below are extracted from star's MIUI V13.0.13.0.SKACNXM
 
 # ADSP
 vendor/bin/adsprpcd
