@@ -180,17 +180,8 @@ echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 echo 0 > /proc/sys/kernel/sched_coloc_busy_hysteresis_enable_cpus
 
 # cpuset parameters
-echo 0-2 > /dev/cpuset/background/cpus
+echo 0-3 > /dev/cpuset/background/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
-echo 4-6 > /dev/cpuset/foreground/boost/cpus
-echo 0-2,4-6 > /dev/cpuset/foreground/cpus
-echo 0-7 > /dev/cpuset/top-app/cpus
-
-#io limit
-echo 11 > /dev/cpuset/top-app/types
-echo 1 > /dev/cpuset/background/types
-echo 9 > /dev/cpuset/foreground/types
-echo 11 > /proc/sys/kernel/mi_iolimit
 
 # configure governor settings for silver cluster
 echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
