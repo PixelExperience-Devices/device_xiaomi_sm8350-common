@@ -5,6 +5,7 @@ type hal_camerapostproc_xiaomi_hwservice, hwservice_manager_type;
 
 set_prop(hal_camera_default, vendor_camera_sensor_prop)
 r_dir_file(hal_camera_default, camera_persist_file)
+r_dir_file(hal_camera_default, mnt_vendor_file)
 
 add_hwservice(hal_camera_default, vendor_hal_cameraperf_hwservice)
 add_hwservice(hal_camera_default, hal_camerapostproc_xiaomi_hwservice)
