@@ -377,7 +377,7 @@ vendor/firmware/a660_zap.elf
 vendor/firmware/a660_zap.mdt
 
 # IFAA Service
--vendor/app/IFAAService/IFAAService.apk
+-vendor/app/IFAAService/IFAAService.apk:vendor/app/IFAAServiceXiaomism8350/IFAAServiceXiaomism8350.apk
 
 # IMS - from LA.QSSI.13.0.r1-05300-qssi.0
 -system_ext/app/ImsRcsService/ImsRcsService.apk|c0566bd1093cc281df903f64f62945088d14087b
