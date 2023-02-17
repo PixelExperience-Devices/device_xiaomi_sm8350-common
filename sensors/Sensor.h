@@ -95,20 +95,16 @@ class OneShotSensor : public Sensor {
 class SysfsPollingOneShotSensor : public OneShotSensor {
   public:
     SysfsPollingOneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callback,
-                              const std::string& pollPath, const std::string& enablePath,
-                              const std::string& name, const std::string& typeAsString,
-                              SensorType type);
+                              const std::string& pollPath, const std::string& name,
+                              const std::string& typeAsString, SensorType type);
     virtual ~SysfsPollingOneShotSensor() override;
 
     virtual void activate(bool enable) override;
     virtual void activate(bool enable, bool notify, bool lock);
-    virtual void writeEnable(bool enable);
     virtual void setOperationMode(OperationMode mode) override;
 
   protected:
     virtual void run() override;
-
-    std::ofstream mEnableStream;
 
     int mScreenX;
     int mScreenY;
@@ -123,13 +119,12 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
 
 const std::string kFtsPath = "/sys/devices/virtual/touch/tp_dev/";
 const std::string kFodPressedPath = kFtsPath + "fod_state";
-const std::string kFodModePath = kFtsPath + "fod_status";
 
 class UdfpsSensor : public SysfsPollingOneShotSensor {
   public:
     UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
         : SysfsPollingOneShotSensor(
-              sensorHandle, callback, kFodPressedPath, kFodModePath, "UDFPS Sensor",
+              sensorHandle, callback, kFodPressedPath, "UDFPS Sensor",
               "org.pixelexperience.sensor.udfps",
               static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1)) {}
 
