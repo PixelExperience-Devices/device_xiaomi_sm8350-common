@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from star's MIUI V13.0.13.0.SKACNXM
+# All unpinned blobs below are extracted from star's MIUI V14.0.6.0.TKACNXM
 
 # ADSP
 vendor/bin/adsprpcd
@@ -911,42 +911,43 @@ vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 
-# WFD - from LA.QSSI.13.0.r1-05300-qssi.0
--system/framework/WfdCommon.jar|323859204993cb8bf89821baeb08a6a85e750c65
-system_ext/bin/wfdservice64|3326f77c84ac3b164d3ac4696292ad4ea9f20b72
-system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
-system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|828999946f9dfef98f17f42a1c8daba47c2c442d
-system_ext/etc/seccomp_policy/wfdservice64.policy|1e331272649395423b11c575892e0bdc9433b820
-system_ext/etc/wfdconfigsink.xml|cb78df66948314a75080a4161321fb3111a0785a
-system_ext/lib64/com.qualcomm.qti.wifidisplayhal@1.0.so|07a7c1f2f394d64b3683d318aa03bfacbe1e6784
-system_ext/lib64/libmiracastsystem.so|49385d8087da9b338b8a4ed99e5fa5cc0133c0b1
-system_ext/lib64/libmmosal.so|d46f10b470ecd829c6f2a424566f1cbbc6ebe234
-system_ext/lib64/libmmparser_lite.so|1959f64d628f9c7dac476f4e32a4f9cae1443f76
-system_ext/lib64/libmmrtpdecoder.so|8bb6d0a8f31795ed913acd3e8cb2299ada7cd22c
-system_ext/lib64/libmmrtpencoder.so|fef79b731d9c2109f23ebc27575b6e057da8310f
-system_ext/lib64/libwfdavenhancements.so|4906965cc3c3df4f1185cd63ae4f624666216b06
-system_ext/lib64/libwfdclient.so|09d0f04a6251f14f41e548592a9848af9d70975c
-system_ext/lib64/libwfdcommonutils.so|4350b11e16553d02fded587feaae5cd82cdfaa0a
-system_ext/lib64/libwfdconfigutils.so|08e0be434b9c54035c4ead47ebb7f0322e2a23ba
-system_ext/lib64/libwfddisplayconfig.so|59a5cb17ffe46900c0ae26a8937a5ddab80fe283
-system_ext/lib64/libwfdmminterface.so|b1e33104bc2231c7f75132757a28c918ee4b3889
-system_ext/lib64/libwfdmmsink.so|0db18686f52492b89d9feffffd0494371f6a8c18
-system_ext/lib64/libwfdmmsrc_system.so|d46d868c7047927c7da7cc3f7274177de655de7d
-system_ext/lib64/libwfdnative.so|6978804839f1e812462d96d84919fff6d83ae868
-system_ext/lib64/libwfdrtsp.so|1957934068e8befa237106fbc584457e86ef07da
-system_ext/lib64/libwfdservice.so|b0e0b2059142168e856d66cc34448704849f14b4
-system_ext/lib64/libwfdsinksm.so|bd2369a1203a3b24115605ec1d27d288b4b62718
-system_ext/lib64/libwfduibcinterface.so|d5a578a2159c4681cb9d159b93c1c39b8f3091f7
-system_ext/lib64/libwfduibcsink.so|d4cc3afb86003f0e26134f82b503b6deac30b6b5
-system_ext/lib64/libwfduibcsinkinterface.so|a875792e5242870cd9a069cb367a6b5031fce2f0
-system_ext/lib64/libwfduibcsrc.so|1529ca18c3484b8a3f3d95e9198def564e86fda3
-system_ext/lib64/libwfduibcsrcinterface.so|69400030817aa8f6994a525b027bb3dd7cabd0d4
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so|a2d59542267d94c451b85bc0541388d004adb68e
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so|c2a925b368d2d85a3ed0beebef61fb16209e2303
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|10b4472b777e070e51ed81ab371b05cfc5324d18
-system_ext/priv-app/WfdService/WfdService.apk|556c225c72b346319b0c0615e3ed43e1fcf1384d
+# WFD (system)
+-system/framework/WfdCommon.jar
+system_ext/bin/wfdservice64
+system_ext/etc/init/wfdservice.rc
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
+system_ext/etc/seccomp_policy/wfdservice64.policy
+system_ext/etc/wfdconfigsink.xml
+system_ext/lib64/com.qualcomm.qti.wifidisplayhal@1.0.so
+system_ext/lib64/libmiracastsystem.so
+system_ext/lib64/libmmosal.so
+system_ext/lib64/libmmparser_lite.so
+system_ext/lib64/libmmrtpdecoder.so
+system_ext/lib64/libmmrtpencoder.so
+system_ext/lib64/libsigmautils.so
+system_ext/lib64/libwfdavenhancements.so
+system_ext/lib64/libwfdclient.so
+system_ext/lib64/libwfdcommonutils.so
+system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfddisplayconfig.so
+system_ext/lib64/libwfdmminterface.so
+system_ext/lib64/libwfdmmsink.so
+system_ext/lib64/libwfdmmsrc_system.so
+system_ext/lib64/libwfdnative.so
+system_ext/lib64/libwfdrtsp.so
+system_ext/lib64/libwfdservice.so
+system_ext/lib64/libwfdsinksm.so
+system_ext/lib64/libwfduibcinterface.so
+system_ext/lib64/libwfduibcsink.so
+system_ext/lib64/libwfduibcsinkinterface.so
+system_ext/lib64/libwfduibcsrc.so
+system_ext/lib64/libwfduibcsrcinterface.so
+system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/priv-app/WfdService/WfdService.apk
 
-# WFD
+# WFD (vendor)
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
 vendor/bin/wifidisplayhalservice
