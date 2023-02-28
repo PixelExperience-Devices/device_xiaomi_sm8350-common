@@ -16,8 +16,9 @@ vendor/lib/soundfx/libshoebox.so
 vendor/lib/hw/audio.primary.lahaina.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libadm.so
-vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudiocloudctrl.so
+vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libaudioroute_ext.so
 vendor/lib/libbatterylistener.so
@@ -26,12 +27,14 @@ vendor/lib/libexthwplugin.so
 vendor/lib/libhdmiedid.so
 vendor/lib/libhdmipassthru.so
 vendor/lib/libhfp.so
+vendor/lib/libmmhardware.so
 vendor/lib/libqtigef.so
 vendor/lib/libresampler.so
 vendor/lib/libsndmonitor.so
 vendor/lib/libspkrprot.so
 vendor/lib/libssrec.so
 vendor/lib/libvideoNS.so
+vendor/lib/vndk/libxlog.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
