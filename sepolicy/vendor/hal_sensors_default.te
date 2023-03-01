@@ -8,3 +8,5 @@ allow hal_sensors_default iio_device:chr_file r_file_perms;
 allow hal_sensors_default vendor_sysfs_iio:dir r_dir_perms;
 allow hal_sensors_default vendor_sysfs_iio:file rw_file_perms;
 allow hal_sensors_default vendor_sysfs_fod:file rw_file_perms;
+
+hal_client_domain(hal_sensors_default, hal_audio)
