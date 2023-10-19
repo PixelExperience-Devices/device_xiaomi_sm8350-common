@@ -425,6 +425,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     CarrierConfigOverlay \
     libjson \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
     librmnetctl
 
 # Sensors
